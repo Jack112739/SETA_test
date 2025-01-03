@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {  useSelector } from "react-redux";
 
 
+// dont know why this function keep being called even though i initialized it one once inside App component
+
 export const get_data = createAsyncThunk('get_data', async () => {
     const api = useSelector(state => state.json_server.api_endpoint);
     const respond = await fetch(api);

@@ -12,6 +12,7 @@ function PostForm() {
             userId: document.getElementById('userId').value,
             body: document.getElementById('post_body').value
         }));
+        dispatch(togle_visibility());
     };
     const cancel = (e) =>{
         e.preventDefault();
