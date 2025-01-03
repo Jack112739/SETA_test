@@ -8,6 +8,7 @@
     top: 100px;
     padding: 5px;
     background-color: white;
+    color: black;
 }
 .wrapper {
     display: flex;
@@ -23,11 +24,13 @@
     border: none;
     flex-grow: 1;
     max-width: 100px;
+    background-color: white;
 }
 .submit-form textarea {
     resize: none;
     overflow-y: auto;
     height: 300px;
+    background-color: white;
 }
 .submit-form > input {
     font-weight: bold;
