@@ -1,0 +1,26 @@
+ [
+        {
+            "input": ["a"],
+            "expected_output": ["a"] 
+        },
+        {
+            "input": ["ab", "ab", "ac", "ad", "ae"],
+            "expected_output": ["ab", "ab", "ac", "ad", "ae"] 
+        },
+        {
+            "input": ["a", "ab", "ac", "ade"],
+            "expected_output": ["ab", "ac"] 
+        },
+        {
+            "input": ["a", "a", "ab", "ab", "abc"],
+            "expected_output": ["a", "a", "ab", "ab"] 
+        },
+        {
+            "input": [],
+            "expected_output": [] 
+        },
+        {
+            "input": ["abc", "acd", "a", "b", "abcd", "aaa"],
+            "expected_output": ["abc", "acd", "aaa"] 
+        }
+]
