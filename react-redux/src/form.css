@@ -1,0 +1,38 @@
+.submit-form {
+    display: flex;
+    width: 50%;
+    border: 2px solid black;
+    flex-direction: column;
+    position: absolute;
+    left: 25%;
+    top: 100px;
+    padding: 5px;
+    background-color: white;
+}
+.wrapper {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+.wrapper > label {
+    font-weight: bold;
+    background-color: white;
+    text-align: center;
+    width: 100px;
+}
+.wrapper > input {
+    border: none;
+    flex-grow: 1;
+    max-width: 100px;
+}
+.submit-form textarea {
+    resize: none;
+    overflow-y: auto;
+    height: 300px;
+}
+.submit-form > input {
+    font-weight: bold;
+}
+.wrapper button {
+    color: white;
+    flex-grow: 1;
+}

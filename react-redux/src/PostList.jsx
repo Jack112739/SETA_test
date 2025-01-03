@@ -1,10 +1,9 @@
-import { get_data } from './json_server';
+
 import './Post.css'
-import {  useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function PostList() {
-    const dispatch = useDispatch();
-    dispatch(get_data());
+
     const hook = useSelector((state) => state.json_server.get_hook);
     return (
         <div className={hook.data ? 'post-list': ''}>

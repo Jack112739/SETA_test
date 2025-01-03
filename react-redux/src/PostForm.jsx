@@ -1,24 +1,41 @@
-import { useState } from "react";
+import { useDispatch} from "react-redux";
+import { togle_visibility } from "./App";
+import { post_data } from "./json_server";
+import './form.css';
 
 function PostForm() {
-    const [visible, setVisibility] = useState(false);
+    const dispatch = useDispatch();
+    const submit = (e) => {
+        e.preventDefault();
+        dispatch(post_data({
+            title: document.getElementById('title').value,
+            userId: document.getElementById('userId').value,
+            body: document.getElementById('post_body').value
+        }));
+    };
+    const cancel = (e) =>{
+        e.preventDefault();
+        dispatch(togle_visibility());
+    }
     return (
-        <div display={visible ? 'block': 'none'} className='background'>
-            <form>
+        <form className="submit-form" onSubmit={submit}>
+            <div className="wrapper">
                 <label>Post title: </label>
-                <input type="text" required />
+                <input type="text" id="title" />
+            </div>
+            <div className="wrapper">
                 <label>user id: </label>
-                <input type="text" required />
-                Content: <br/>
-                <textarea></textarea>
-                <button onClick={submit_post}>Submit</button>
-            </form>
-        </div>
-    )
+                <input type="text" id='userId'/>
+            </div>
+            <label>Content:</label>
+            <textarea id='post_body'></textarea>
+            <div className="wrapper">
+                <button style={{backgroundColor: 'blue'}}>Submit</button>
+                <button style={{backgroundColor: 'red'}} onClick={cancel}>Cancel</button>
+            </div>
+        </form>
+    ) 
 }
 
-function submit_post(e) {
-
-}
 
 export default PostForm;

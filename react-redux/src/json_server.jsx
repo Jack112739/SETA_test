@@ -10,6 +10,7 @@ export const get_data = createAsyncThunk('get_data', async () => {
 });
 
 export const post_data = createAsyncThunk('post_data', async (opt) => {
+    console.log(opt);
     const api = useSelector((state) => state.json_server.api_endpoint);
     const new_post = {
         body: opt.body,
@@ -54,11 +55,12 @@ const server_slice = createSlice({
             state.get_hook.error = action.payload;
         });
         builder.addCase(post_data.fulfilled, (state, action) => {
-            state.post_hook.pending = true;
+            state.post_hook.pending = false;
             state.post_hook.status = action.payload;
         })
         builder.addCase(post_data.rejected, (state, action) => {
             state.post_hook.status = action.payload;
+            alert('can not upload, server returned with status ' + action.payload);
         })
     }
 })
